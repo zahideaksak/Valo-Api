@@ -1,4 +1,3 @@
 package com.zahideaksak.valoagents.ui.home
 
-class HomeUiData {
-}
+data class HomeUiData(val name: String, val imageUrl: String)
