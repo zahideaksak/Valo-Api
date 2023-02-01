@@ -1,6 +1,9 @@
 package com.zahideaksak.valoagents.utility
 
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.appcompat.widget.AppCompatImageView
+import coil.load
+import coil.size.Scale
 import com.zahideaksak.valoagents.ui.contract.AbstractTextWatcher
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
@@ -16,7 +19,6 @@ fun AppCompatEditText.observeTextChanges(): Flow<String> {
             }
         }
         addTextChangedListener(textWatcher)
-
         awaitClose {
             removeTextChangedListener(textWatcher)
         }
@@ -24,5 +26,11 @@ fun AppCompatEditText.observeTextChanges(): Flow<String> {
         text?.let {
             emit(it.toString())
         }
+    }
+}
+
+fun AppCompatImageView.loadImage(imageUrl: String) {
+    load(imageUrl) {
+        scale(Scale.FILL)
     }
 }

@@ -34,6 +34,12 @@ class HomeFragment : Fragment() {
 
     }
 
+//    private fun handleSuccessUiState(data: List<HomeUiData>) {
+//        adapter.updatePokeElements(data)
+//        adapter.updateItems(data)
+//    }
+
+
     private fun observeSearchTextChanges() {
         binding.searchEditText.observeTextChanges()
             .filter { it okWith MINIMUM_SEARCH_LENGTH }

@@ -15,5 +15,5 @@ abstract class UseCaseModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun bindGetPokeUseCase(pokeWithHealthPointUseCaseImpl: GetAgentWithHealthPointUseCaseImpl): GetAgentWithHealthPointUseCase
+    abstract fun bindGetValorantUseCase(agentWithHealthPointUseCaseImpl: GetAgentWithHealthPointUseCaseImpl): GetAgentWithHealthPointUseCase
 }

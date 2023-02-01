@@ -14,7 +14,7 @@ class ValorantRepositoryImpl @Inject constructor(
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
 ) : ValorantRepository {
     override suspend fun getAgentsWithHealtPoint(healthPoint: String): NetworkResponseState<List<Data>> {
-        withContext(ioDispatcher) {
+        return withContext(ioDispatcher) {
             try {
                 remoteDataSource.getAgentsWithHealthPoint(healthPoint)
             } catch (e: Exception) {
